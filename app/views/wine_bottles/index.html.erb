@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="well">
   <table class="table">
+    <%= link_to '+ New Wine Bottle', new_wine_bottle_path, class: 'btn btn-success pull-right' %>
     <thead>
       <tr>
         <th>Name</th>
@@ -8,7 +9,7 @@
         <th>Origin</th>
         <th>Year</th>
         <th>Size</th>
-        <th>Purchase date</th>
+        <th>Purchase Date</th>
         <th>Notes</th>
         <th>Rating</th>
         <th colspan="3"></th>
@@ -22,19 +23,17 @@
           <td><%= wine_bottle.name %></td>
           <td><%= wine_bottle.style %></td>
           <td><%= wine_bottle.origin %></td>
-          <td><%= wine_bottle.year %></td>
+          <td><%= wine_bottle.year.strftime('%Y') %></td>
           <td><%= wine_bottle.size %></td>
           <td><%= wine_bottle.purchase_date %></td>
           <td><%= wine_bottle.notes %></td>
           <td><%= wine_bottle.rating %></td>
-          <td><%= link_to 'Details', wine_bottle, class: 'btn btn-info' %></td>
-          <td><%= link_to 'Edit', edit_wine_bottle_path(wine_bottle), class: 'btn btn-warning' %></td>
-          <td><%= link_to 'Destroy', wine_bottle, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+          <td><%= link_to 'Details', wine_bottle, class: 'btn btn-default' %></td>
+          <td><%= link_to 'Edit', edit_wine_bottle_path(wine_bottle), class: 'btn btn-default' %></td>
+          <td><%= link_to 'Consumed', wine_bottle, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
 <br>
-
-<%= link_to '+ New Wine bottle', new_wine_bottle_path, class: 'btn btn-success' %>

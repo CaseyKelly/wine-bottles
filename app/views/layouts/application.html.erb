@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WineBottles</title>
+  <title>The Resnick Reserve</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +9,7 @@
 <body>
 
   <div class="container">
+    <div class="page-header">
     <script type="text/javascript" src="http://leaverou.github.io/prefixfree/prefixfree.min.js"></script>
 
     <div id="plate">
@@ -17,12 +18,12 @@
             <div class="cork"></div>
             <div class="neck"></div>
             <div class="body">
-                <div class="label"></div>
-                <div class="label-shadow"></div>
+                <!-- <div class="label"></div>
+                <div class="label-shadow"></div> -->
             </div>
         </div>
 
-        <div id="cork">
+        <!-- <div id="cork">
         </div>
 
         <div id="glass">
@@ -31,11 +32,11 @@
             </div>
             <div class="stem"></div>
             <div class="foot"></div>
-        </div>
-    </div>
+        </div> -->
+      </div>
 
-    <h1>The Resnick<br/>Reserve</h1>
-
+    <h1><b>The Resnick Reserve</b></h1>
+</div>
     <%= yield %>
 
   </div>

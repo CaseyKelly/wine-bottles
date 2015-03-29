@@ -1,5 +1,5 @@
-<div class="well col-md-6">
-  <%= simple_form_for(@wine_bottle, html: {class: 'form-horizontal' }) do |f| %>
+<div class="well col-md-offset-3 col-md-6">
+  <%= form_for(@wine_bottle, html: {class: 'form-horizontal' }) do |f| %>
     <% if @wine_bottle.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@wine_bottle.errors.count, "error") %> prohibited this wine_bottle from being saved:</h2>
@@ -11,47 +11,75 @@
         </ul>
       </div>
     <% end %>
-
-      <%= f.input :name, class: "form_control" %>
-      <%= f.input :style, class: "form-control" %>
-    <div class="field">
-      <%= f.label :origin %><br>
-      <%= f.text_field :origin %>
+    <div class="form-group">
+      <div class="field">
+        <%= f.label :name, :class => 'control-label col-md-2' %>
+        <div class='form-controls col-md-10'>
+          <%= f.text_field :name, :class => 'form-control' %>
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :year %><br>
-      <%= f.date_select :year %>
+    <div class="form-group">
+      <div class="field">
+        <%= f.label :style, :class => 'control-label col-md-2' %>
+        <div class='form-controls col-md-10'>
+          <%= f.text_field :style, :class => 'form-control' %>
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :size %><br>
-      <%= f.text_field :size %>
+    <div class="form-group">
+      <div class="field">
+        <%= f.label :origin, :class => 'control-label col-md-2' %>
+        <div class='form-controls col-md-10'>
+          <%= f.text_field :origin, :class => 'form-control' %>
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :purchase_date %><br>
-      <%= f.date_select :purchase_date %>
+    <div class="form-group">
+      <div class="field">
+        <%= f.label :year, :class => 'control-label col-md-2' %>
+        <div class='form-controls col-md-10'>
+          <%= f.date_select(:year, :start_year => Date.current.year, :end_year => 1920) %>
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :notes %><br>
-      <%= f.text_field :notes %>
+    <div class="form-group">
+      <div class="field">
+        <%= f.label :size, :class => 'control-label col-md-2' %>
+        <div class='form-controls col-md-10'>
+          <%= f.text_field :size, :class => 'form-control' %>
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :rating %><br>
-      <%= f.number_field :rating %>
+    <div class="form-group">
+      <div class="field">
+        <%= f.label 'Purchased', :class => 'control-label col-md-2' %>
+        <div class='form-controls col-md-10'>
+          <%= f.date_select :purchase_date  %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="field">
+        <%= f.label :notes, :class => 'control-label col-md-2' %>
+        <div class='form-controls col-md-10'>
+          <%= f.text_area :notes, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="field">
+        <%= f.label :rating, :class => 'control-label col-md-2' %>
+        <div class='form-controls col-md-10'>
+          <%= f.number_field :rating, class: "form-control" %>
+        </div>
+      </div>
     </div>
     <div class="actions">
-      <%= f.submit class: 'btn btn-info' %>
-    </div>
-  <% end %>
-
-  <%= simple_form_for(@wine_bottle, html: {class: 'form-horizontal' }) do |f| %>
-    <div class="field">
-      <%= f.input :name %>
-    </div>
-    <div class="field">
-      <%= f.input :style %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
+      <center>
+        <%= f.submit 'Submit', class: 'btn btn-success' %>
+        <%= link_to 'Back', wine_bottles_path, class: 'btn btn-default' %>
+      </center>
     </div>
   <% end %>
 </div>

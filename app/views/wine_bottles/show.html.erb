@@ -1,5 +1,5 @@
-<div class="col-md-4">
-  <center><div class="well">
+<div class="well col-md-offset-4 col-md-4">
+  <center>
     <p id="notice"><%= notice %></p>
 
     <p>
@@ -42,7 +42,7 @@
       <%= @wine_bottle.rating %>
     </p>
 
-    <%= link_to 'Edit', edit_wine_bottle_path(@wine_bottle) %> |
-    <%= link_to 'Back', wine_bottles_path %>
-  </div></center>
+    <%= link_to 'Edit', edit_wine_bottle_path(@wine_bottle), class: 'btn btn-default' %>
+    <%= link_to 'Back', wine_bottles_path, class: 'btn btn-default' %>
+  </center>
 </div>
