@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WineBottles</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="container">
+    <script type="text/javascript" src="http://leaverou.github.io/prefixfree/prefixfree.min.js"></script>
+
+    <div id="plate">
+
+        <div id="bottle">
+            <div class="cork"></div>
+            <div class="neck"></div>
+            <div class="body">
+                <div class="label"></div>
+                <div class="label-shadow"></div>
+            </div>
+        </div>
+
+        <div id="cork">
+        </div>
+
+        <div id="glass">
+            <div class="bowl">
+                <div class="wine"></div>
+            </div>
+            <div class="stem"></div>
+            <div class="foot"></div>
+        </div>
+    </div>
+
+    <h1>The Resnick<br/>Reserve</h1>
+
+    <%= yield %>
+
+  </div>
+
+</body>
+</html>

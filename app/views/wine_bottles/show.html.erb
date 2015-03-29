@@ -1,0 +1,48 @@
+<div class="col-md-4">
+  <center><div class="well">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @wine_bottle.name %>
+    </p>
+
+    <p>
+      <strong>Style:</strong>
+      <%= @wine_bottle.style %>
+    </p>
+
+    <p>
+      <strong>Origin:</strong>
+      <%= @wine_bottle.origin %>
+    </p>
+
+    <p>
+      <strong>Year:</strong>
+      <%= @wine_bottle.year %>
+    </p>
+
+    <p>
+      <strong>Size:</strong>
+      <%= @wine_bottle.size %>
+    </p>
+
+    <p>
+      <strong>Purchase date:</strong>
+      <%= @wine_bottle.purchase_date %>
+    </p>
+
+    <p>
+      <strong>Notes:</strong>
+      <%= @wine_bottle.notes %>
+    </p>
+
+    <p>
+      <strong>Rating:</strong>
+      <%= @wine_bottle.rating %>
+    </p>
+
+    <%= link_to 'Edit', edit_wine_bottle_path(@wine_bottle) %> |
+    <%= link_to 'Back', wine_bottles_path %>
+  </div></center>
+</div>

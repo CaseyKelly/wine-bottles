@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  origin: MyString
+  year: 2015-03-29
+  size: MyString
+  purchase_date: 2015-03-29
+  notes: MyString
+  rating: 1
+
+two:
+  name: MyString
+  type: 
+  origin: MyString
+  year: 2015-03-29
+  size: MyString
+  purchase_date: 2015-03-29
+  notes: MyString
+  rating: 1

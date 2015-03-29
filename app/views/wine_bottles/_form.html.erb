@@ -1,0 +1,57 @@
+<div class="well col-md-6">
+  <%= simple_form_for(@wine_bottle, html: {class: 'form-horizontal' }) do |f| %>
+    <% if @wine_bottle.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@wine_bottle.errors.count, "error") %> prohibited this wine_bottle from being saved:</h2>
+
+        <ul>
+        <% @wine_bottle.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+      <%= f.input :name, class: "form_control" %>
+      <%= f.input :style, class: "form-control" %>
+    <div class="field">
+      <%= f.label :origin %><br>
+      <%= f.text_field :origin %>
+    </div>
+    <div class="field">
+      <%= f.label :year %><br>
+      <%= f.date_select :year %>
+    </div>
+    <div class="field">
+      <%= f.label :size %><br>
+      <%= f.text_field :size %>
+    </div>
+    <div class="field">
+      <%= f.label :purchase_date %><br>
+      <%= f.date_select :purchase_date %>
+    </div>
+    <div class="field">
+      <%= f.label :notes %><br>
+      <%= f.text_field :notes %>
+    </div>
+    <div class="field">
+      <%= f.label :rating %><br>
+      <%= f.number_field :rating %>
+    </div>
+    <div class="actions">
+      <%= f.submit class: 'btn btn-info' %>
+    </div>
+  <% end %>
+
+  <%= simple_form_for(@wine_bottle, html: {class: 'form-horizontal' }) do |f| %>
+    <div class="field">
+      <%= f.input :name %>
+    </div>
+    <div class="field">
+      <%= f.input :style %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
