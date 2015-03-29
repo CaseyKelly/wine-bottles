@@ -1,7 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+/*
+ *= require jquery-tablesorter/theme.bootstrap
+ */
+
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 
 #wine_bottle_year_2i{
@@ -10,17 +13,18 @@
 
 th {
   font-family: 'Poiret One', cursive;
-    font-size: 1.2em;
+  font-size: 1.2em;
+  color: blue;
 }
 
 td {
   font-family: 'Poiret One', cursive;
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .btn {
   font-family: 'Poiret One', cursive;
-  }
+}
 
 #wine_bottle_year_3i{
   display:none;
