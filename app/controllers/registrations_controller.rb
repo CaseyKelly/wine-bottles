@@ -9,7 +9,7 @@ class RegistrationsController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to wine_bottles_path, notice: "Thanks for signing up."
+      redirect_to user_wine_bottles_path(@user), notice: "Thanks for signing up."
     else
       render :new
     end
@@ -18,7 +18,7 @@ class RegistrationsController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
-      redirect_to wine_bottles_path, notice: 'User was successfully deleted.'
+      redirect_to user_wine_bottles_path, notice: 'User was successfully deleted.'
     end
   end
 

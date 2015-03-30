@@ -17,11 +17,13 @@
      </div>
      <div class="navbar-header pull-right">
        <% if current_user %>
-         <%= link_to 'View Bottles', wine_bottles_path, class: 'navbar-brand' %>
+         <%= link_to 'View Bottles', user_wine_bottles_path(@user), class: 'navbar-brand' %>
          <%= link_to 'Sign Out', signout_path, class: 'navbar-brand' %>
        <% else %>
-         <%= link_to 'Sign Up', signup_path, class: 'navbar-brand' %>
+       <% unless controller_name =="welcome" %>
+       <%= link_to 'Sign Up', signup_path, class: 'navbar-brand' %>
          <%= link_to 'Sign In', signin_path, class: 'navbar-brand' %>
+         <% end %>
        <% end %>
      </div>
    </div>

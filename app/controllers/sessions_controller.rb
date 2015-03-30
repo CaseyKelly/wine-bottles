@@ -5,10 +5,11 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @user = User.find_by(params[:user_id])
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to wine_bottles_path, notice: 'Welcome back, stranger!'
+      redirect_to user_wine_bottles_path(@user), notice: 'Welcome back, stranger!'
     else
       flash[:login_alert] = "Username / password combination is invalid"
       redirect_to signin_path
