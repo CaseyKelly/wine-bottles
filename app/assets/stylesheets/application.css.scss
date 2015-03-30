@@ -3,8 +3,8 @@
 
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
-#wine_bottle_year_2i{
-  display:none;
+.alert {
+  margin-bottom: -5px;
 }
 
 .navbar-brand {
@@ -24,6 +24,18 @@ td {
 
 .btn {
   font-family: 'Poiret One', cursive;
+}
+
+#scotch_bottle_vintage_2i{
+  display:none;
+}
+
+#scotch_bottle_vintage_3i{
+  display:none;
+}
+
+#wine_bottle_year_2i{
+  display:none;
 }
 
 #wine_bottle_year_3i{

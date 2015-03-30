@@ -38,7 +38,7 @@ class WineBottlesController < ApplicationController
 
   def destroy
     @wine_bottle.destroy
-      redirect_to user_wine_bottles_path, notice: 'Wine bottle was successfully destroyed.'
+      redirect_to user_wine_bottles_path, alert: 'Wine bottle was removed.'
   end
 
   private

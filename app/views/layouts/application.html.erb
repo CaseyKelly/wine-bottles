@@ -30,13 +30,6 @@
  </div>
 
   <div class="container">
-    <% flash.each do |type, message| %>
-   <% if type == "notice" %>
-   <div class="alert alert-success"><b><center><%= message %></b></center></div>
-   <% elsif type == "alert" %>
-   <div class="alert alert-danger"><b><center><%= message %></b></center></div>
-   <% end %>
-   <% end %>
 
     <script type="text/javascript" src="http://leaverou.github.io/prefixfree/prefixfree.min.js"></script>
 
@@ -64,6 +57,13 @@
       </div>
 
     <h1><b>The Reserve</b></h1>
+    <% flash.each do |type, message| %>
+   <% if type == "notice" %>
+   <div class="alert alert-success"><b><center><%= message %></b></center></div>
+   <% elsif type == "alert" %>
+   <div class="alert alert-danger"><b><center><%= message %></b></center></div>
+   <% end %>
+   <% end %>
     <%= yield %>
 
   </div>

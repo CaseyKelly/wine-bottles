@@ -19,8 +19,9 @@ class ScotchBottlesController < ApplicationController
 
   def create
     @scotch_bottle = ScotchBottle.new(scotch_bottle_params)
+    @scotch_bottle.user_id = @user.id
       if @scotch_bottle.save
-        redirect_to user_scotch_bottles_path(@user), notice: 'Scotch bottle was successfully created.'
+        redirect_to user_scotch_bottles_path(@user), notice: 'Scotch Bottle was successfully created.'
       else
         render :new
       end
@@ -28,7 +29,7 @@ class ScotchBottlesController < ApplicationController
 
   def update
     if @scotch_bottle.update(scotch_bottle_params)
-      redirect_to user_scotch_bottles_path(@user), notice: 'Scotch bottle was successfully updated.'
+      redirect_to user_scotch_bottles_path(@user), notice: 'Scotch Bottle was successfully updated.'
     else
       render :edit
     end
@@ -36,7 +37,7 @@ class ScotchBottlesController < ApplicationController
 
   def destroy
     @scotch_bottle.destroy
-      redirect_to scotch_bottles_url, notice: 'Scotch bottle was successfully destroyed.'
+      redirect_to user_scotch_bottles_path(@user), alert: 'Scotch bottle was removed.'
   end
 
   private

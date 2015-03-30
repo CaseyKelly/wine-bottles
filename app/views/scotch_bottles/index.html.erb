@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <div class="well">
   <h2>Scotch Bottles</h2>
   <ul class="nav nav-pills">
@@ -16,7 +15,6 @@
       <th>Size</th>
       <th>Quantity</th>
       <th>Rating</th>
-      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,16 +23,15 @@
     <% @user.scotch_bottles.each do |scotch_bottle| %>
       <tr>
         <td><%= scotch_bottle.name %></td>
-        <td><%= scotch_bottle.vintage %></td>
+        <td><%= scotch_bottle.vintage.strftime('%Y') %></td>
         <td><%= scotch_bottle.notes %></td>
         <td><%= scotch_bottle.location %></td>
         <td><%= scotch_bottle.size %></td>
         <td><%= scotch_bottle.quantity %></td>
         <td><%= scotch_bottle.rating %></td>
-        <td><%= scotch_bottle.user %></td>
-        <td><%= link_to 'Show', user_scotch_bottle(@user) %></td>
-        <td><%= link_to 'Edit', edit_user_scotch_bottle_path(@user, scotch_bottle) %></td>
-        <td><%= link_to 'Consume', user_scotch_bottle(@user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Details', user_scotch_bottle_path(@user, scotch_bottle), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Edit', edit_user_scotch_bottle_path(@user, scotch_bottle), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Consumed', user_scotch_bottle_path(@user, scotch_bottle), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
