@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330025301) do
+ActiveRecord::Schema.define(version: 20150330034436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "scotch_bottles", force: :cascade do |t|
+    t.string   "name"
+    t.date     "vintage"
+    t.string   "notes"
+    t.string   "location"
+    t.string   "size"
+    t.integer  "quantity"
+    t.integer  "rating"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "scotch_bottles", ["user_id"], name: "index_scotch_bottles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -39,5 +54,6 @@ ActiveRecord::Schema.define(version: 20150330025301) do
 
   add_index "wine_bottles", ["user_id"], name: "index_wine_bottles_on_user_id", using: :btree
 
+  add_foreign_key "scotch_bottles", "users"
   add_foreign_key "wine_bottles", "users"
 end

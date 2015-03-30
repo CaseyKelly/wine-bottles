@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 <div class="well">
+    <h2>Wine Bottles</h2>
+  <ul class="nav nav-pills">
+    <li role="presentation" class="active"><a href="#">Wine</a></li>
+    <li role="presentation"> <%= link_to 'Scotch', user_scotch_bottles_path(@user) %></li>
+  </ul>
   <table class="table">
     <%= link_to '+ New Wine Bottle', new_user_wine_bottle_path, class: 'btn btn-success pull-right' %>
     <thead>
@@ -38,4 +43,3 @@
     </tbody>
   </table>
 </div>
-<br>

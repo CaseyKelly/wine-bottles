@@ -1,4 +1,5 @@
 class RegistrationsController < ApplicationController
+  before_action :set_user
 
   def new
     @user = User.new
@@ -25,5 +26,8 @@ class RegistrationsController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    end
+    def set_user
+      @user = User.find_by(params[:current_user])
     end
 end

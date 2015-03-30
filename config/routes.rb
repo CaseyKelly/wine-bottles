@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+
   resources :users do
     resources :wine_bottles
+    resources :scotch_bottles
   end
 
   root 'welcome#index'

@@ -1,0 +1,2 @@
+module ScotchBottlesHelper
+end

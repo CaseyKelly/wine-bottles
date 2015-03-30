@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @scotch_bottle.name %>
+</p>
+
+<p>
+  <strong>Vintage:</strong>
+  <%= @scotch_bottle.vintage %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @scotch_bottle.notes %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @scotch_bottle.location %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @scotch_bottle.size %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @scotch_bottle.quantity %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @scotch_bottle.rating %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @scotch_bottle.user %>
+</p>
+
+<%= link_to 'Edit', edit_user_scotch_bottle_path(@user, @scotch_bottle) %> |
+<%= link_to 'Back', user_scotch_bottles_path(@user) %>

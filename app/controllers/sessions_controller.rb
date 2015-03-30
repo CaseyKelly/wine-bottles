@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
+  before_action :set_user
 
   def new
-    @user = User.new
   end
 
   def create
@@ -20,4 +20,9 @@ class SessionsController < ApplicationController
     session.clear
     redirect_to root_path, notice: "We're sorry to see you go!"
   end
+
+  private
+    def set_user
+      @user = User.find_by(params[:current_user])
+    end
 end

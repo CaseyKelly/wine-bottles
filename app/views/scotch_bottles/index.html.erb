@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<div class="well">
+  <h2>Scotch Bottles</h2>
+  <ul class="nav nav-pills">
+    <li role="presentation"><%= link_to 'Wine', user_wine_bottles_path(@user) %></li>
+    <li role="presentation" class="active"><a href="#">Scotch</a></li>
+  </ul>
+<table class="table">
+  <%= link_to '+ New Scotch Bottle', new_user_scotch_bottle_path, class: 'btn btn-success pull-right'  %>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Vintage</th>
+      <th>Notes</th>
+      <th>Location</th>
+      <th>Size</th>
+      <th>Quantity</th>
+      <th>Rating</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.scotch_bottles.each do |scotch_bottle| %>
+      <tr>
+        <td><%= scotch_bottle.name %></td>
+        <td><%= scotch_bottle.vintage %></td>
+        <td><%= scotch_bottle.notes %></td>
+        <td><%= scotch_bottle.location %></td>
+        <td><%= scotch_bottle.size %></td>
+        <td><%= scotch_bottle.quantity %></td>
+        <td><%= scotch_bottle.rating %></td>
+        <td><%= scotch_bottle.user %></td>
+        <td><%= link_to 'Show', user_scotch_bottle(@user) %></td>
+        <td><%= link_to 'Edit', edit_user_scotch_bottle_path(@user, scotch_bottle) %></td>
+        <td><%= link_to 'Consume', user_scotch_bottle(@user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

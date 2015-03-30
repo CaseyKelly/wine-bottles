@@ -47,7 +47,7 @@
       <%= @wine_bottle.rating %>
     </p>
 
-    <%= link_to 'Edit', edit_wine_bottle_path(@wine_bottle), class: 'btn btn-default' %>
-    <%= link_to 'Back', wine_bottles_path, class: 'btn btn-default' %>
+    <%= link_to 'Edit', edit_user_wine_bottle_path(@user, @wine_bottle), class: 'btn btn-default' %>
+    <%= link_to 'Back', user_wine_bottles_path(@user), class: 'btn btn-default' %>
   </center>
 </div>
