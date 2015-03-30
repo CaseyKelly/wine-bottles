@@ -1,5 +1,6 @@
 class WineBottlesController < ApplicationController
   before_action :set_wine_bottle, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate
 
   def index
     @wine_bottles = WineBottle.all

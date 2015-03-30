@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The Resnick Reserve</title>
+  <title>The Reserve</title>
   <%= favicon_link_tag 'wine-glass.ico' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,7 +11,31 @@
 </head>
 <body>
 
+  <div class="navbar navbar-fixed-top" role="navigation">
+   <div class="container">
+     <div class="navbar-header">
+     </div>
+     <div class="navbar-header pull-right">
+       <% if current_user %>
+         <%= link_to 'View Bottles', wine_bottles_path, class: 'navbar-brand' %>
+         <%= link_to 'Sign Out', signout_path, class: 'navbar-brand' %>
+       <% else %>
+         <%= link_to 'Sign Up', signup_path, class: 'navbar-brand' %>
+         <%= link_to 'Sign In', signin_path, class: 'navbar-brand' %>
+       <% end %>
+     </div>
+   </div>
+ </div>
+
   <div class="container">
+    <% flash.each do |type, message| %>
+   <% if type == "notice" %>
+   <div class="alert alert-success"><b><center><%= message %></b></center></div>
+   <% elsif type == "alert" %>
+   <div class="alert alert-danger"><b><center><%= message %></b></center></div>
+   <% end %>
+   <% end %>
+
     <div class="page-header">
     <script type="text/javascript" src="http://leaverou.github.io/prefixfree/prefixfree.min.js"></script>
 
@@ -38,7 +62,7 @@
         </div> -->
       </div>
 
-    <h1><b>The Resnick Reserve</b></h1>
+    <h1><b>The Reserve</b></h1>
 </div>
     <%= yield %>
 
