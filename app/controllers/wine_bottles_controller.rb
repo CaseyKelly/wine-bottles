@@ -51,6 +51,6 @@ class WineBottlesController < ApplicationController
     end
 
     def wine_bottle_params
-      params.require(:wine_bottle).permit(:name, :style, :origin, :year, :size, :purchase_date, :notes, :rating)
+      params.require(:wine_bottle).permit(:name, :style, :origin, :quantity, :year, :size, :purchase_date, :notes, :rating)
     end
 end
